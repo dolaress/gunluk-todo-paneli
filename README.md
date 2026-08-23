@@ -1,11 +1,14 @@
 # Günlük Todo Kontrol Paneli
 
+**🔗 Canlı demo: [gunluk-todo-paneli.vercel.app](https://gunluk-todo-paneli.vercel.app)**
+
 Basit bir yapılacaklar listesinden fazlası: günün tamamını **zaman bloklarına** göre planlayan, üretkenliğini ölçen bir kontrol paneli. Backend yok — tüm veriler tarayıcının `localStorage`'ında, **tarih bazlı anahtarlarla** saklanır.
 
 ![Kontrol paneli — açık tema](docs/screenshots/dashboard-light.png)
 
 ## İçindekiler
 
+- [Canlı demo](https://gunluk-todo-paneli.vercel.app)
 - [Özellikler](#özellikler)
 - [Ekran görüntüleri](#ekran-görüntüleri)
 - [Teknoloji yığını](#teknoloji-yığını)

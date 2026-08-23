@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* Dark mode: class stratejisi (Tailwind v4) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-surface: #ffffff;
+  --color-canvas: #f6f7f9;
+  --color-ink: #16181d;
+  --color-muted: #6b7280;
+  --color-line: #e6e8ec;
+
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-300: #a5b4fc;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+
+  --radius-card: 1rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+
+  .dark body {
+    @apply bg-[#0e1013] text-[#e8eaed];
+  }
+
+  /* Odak halkası tutarlılığı */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-500;
+  }
+}
+
+@layer components {
+  /* Kart tabanlı arayüzün temel yüzeyi */
+  .card {
+    @apply rounded-2xl border border-line bg-surface shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(16,24,40,0.12)];
+  }
+
+  .dark .card {
+    @apply border-white/8 bg-white/4 shadow-none;
+  }
+
+  /* Tailwind v4'te @apply ile başka bir custom class'a referans verilemez,
+     bu yüzden ortak buton stilleri gruplanmış seçicide tanımlanır. */
+  .btn,
+  .btn-primary,
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium
+           transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+
+  .btn-ghost {
+    @apply border border-line bg-transparent text-ink hover:bg-black/4;
+  }
+
+  .dark .btn-ghost {
+    @apply border-white/10 text-[#e8eaed] hover:bg-white/8;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-line bg-surface px-3.5 py-2.5 text-sm text-ink
+           placeholder:text-muted focus:border-brand-500 focus:outline-none;
+  }
+
+  .dark .field {
+    @apply border-white/12 bg-white/5 text-[#e8eaed] placeholder:text-white/35;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-medium tracking-wide text-muted uppercase;
+  }
+
+  .dark .label {
+    @apply text-white/45;
+  }
+}
+
+/* Timeline şeridinde ince scrollbar */
+@layer utilities {
+  .thin-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .thin-scroll::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-black/15;
+  }
+  .dark .thin-scroll::-webkit-scrollbar-thumb {
+    @apply bg-white/15;
+  }
+  .thin-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes toast-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in-right { animation: slide-in-right 0.25s cubic-bezier(0.32, 0.72, 0, 1); }
+.animate-fade-in { animation: fade-in 0.2s ease-out; }
+.animate-toast-up { animation: toast-up 0.25s cubic-bezier(0.32, 0.72, 0, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-in-right,
+  .animate-fade-in,
+  .animate-toast-up {
+    animation: none;
+  }
+}

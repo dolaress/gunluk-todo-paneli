@@ -49,11 +49,7 @@ Basit bir yapılacaklar listesinden fazlası: günün tamamını **zaman bloklar
 <table>
   <tr>
     <td width="50%"><img src="docs/screenshots/dashboard-dark.png" alt="Koyu tema" /><br /><sub><b>Koyu tema — timeline görünümü</b></sub></td>
-    <td width="50%"><img src="docs/screenshots/list-view.png" alt="Liste görünümü" /><br /><sub><b>Liste görünümü ve filtreler</b></sub></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/task-form.png" alt="Görev formu" /><br /><sub><b>Görev ekleme paneli</b></sub></td>
-    <td><img src="docs/screenshots/mobile.png" alt="Mobil görünüm" /><br /><sub><b>Mobil görünüm</b></sub></td>
+    <td width="50%"><img src="docs/screenshots/settings.png" alt="Ayarlar sayfası" /><br /><sub><b>Ayarlar — veri özeti ve yönetimi</b></sub></td>
   </tr>
 </table>
 

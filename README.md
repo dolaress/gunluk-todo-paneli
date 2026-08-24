@@ -4,13 +4,10 @@
 
 Basit bir yapılacaklar listesinden fazlası: günün tamamını **zaman bloklarına** göre planlayan, üretkenliğini ölçen bir kontrol paneli. Backend yok — tüm veriler tarayıcının `localStorage`'ında, **tarih bazlı anahtarlarla** saklanır.
 
-![Kontrol paneli — açık tema](docs/screenshots/dashboard-light.png)
-
 ## İçindekiler
 
 - [Canlı demo](https://gunluk-todo-paneli.vercel.app)
 - [Özellikler](#özellikler)
-- [Ekran görüntüleri](#ekran-görüntüleri)
 - [Teknoloji yığını](#teknoloji-yığını)
 - [Kurulum](#kurulum)
 - [Klasör yapısı](#klasör-yapısı)
@@ -43,15 +40,6 @@ Basit bir yapılacaklar listesinden fazlası: günün tamamını **zaman bloklar
 - `prefers-reduced-motion` desteği
 - Mobil öncelikli responsive düzen — dar ekranda tek kolon, geniş ekranda içerik + yan panel
 - Isı haritasındaki bir güne tıklayarak o günün planına geçiş
-
-## Ekran görüntüleri
-
-<table>
-  <tr>
-    <td width="50%"><img src="docs/screenshots/dashboard-dark.png" alt="Koyu tema" /><br /><sub><b>Koyu tema — timeline görünümü</b></sub></td>
-    <td width="50%"><img src="docs/screenshots/settings.png" alt="Ayarlar sayfası" /><br /><sub><b>Ayarlar — veri özeti ve yönetimi</b></sub></td>
-  </tr>
-</table>
 
 ## Teknoloji yığını
 
